@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)http://127.0.0.1:5500/Experiment2_Final.html?fTxt=&lTxt=&email=&pwd=&cpwd=&email=&country=India&profile= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        form{
+            max-width: 600px;
+            width:100%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+        }
+        label{
+            display:block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select{
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border-bottom: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type = "submit"]{
+            background-color: green;
+            color:white;
+        }
+        input[type = "submit"].hover{
+            background-color:green;
+            color:white;
+        }
+        .group{
+            display:flex;
+            gap:10px;
+        }
+        .group label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    </style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="text" name="fTxt">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lTxt">
+        <label for="email">Email Address:</label>
+        <input type="text" name="email">
+        <label for="pwd">Password:</label>
+        <input type="password" name="pwd">
+        <label for="cpwd">Confirm Password:</label>
+        <input type="password" name="cpwd">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="email">
+        <label for="gender">Gender:</label>
+        <div class="group">
+            <label>
+                <input type="radio" name="gen"> Male
+            </label>
+            <label>
+                <input type="radio" name="gen"> Female
+            </label>
+            <label>
+                <input type="radio" name="gen"> Other
+            </label>
+        </div>
+        <label for="gender">Country:</label>
+        <select name="country">
+            <option>India</option>
+            <option>UK</option>
+            <option>USA</option>
+        </select>
+        <label for="profile">Profile Picture:</label>
+        <input type="file" name="profile">
+        <input type="submit" value="Register">
+    </form>    
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
